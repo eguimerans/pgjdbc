@@ -1,7 +1,6 @@
 package org.postgres.test;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,12 +36,8 @@ public class PreparedStatementDaylightSavingTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
 
-        //_conn = TestUtil.openDB();
+        _conn = TestUtil.openDB();
 
-        String url = "jdbc:postgresql://localhost/test";
-        String user = "postgres";
-        String password = "root";
-        _conn = DriverManager.getConnection(url, user, password);
         TestUtil.createTable(_conn, "dls1test", "name varchar(500), val timestamp");
 
         // daylight saving time in EDT  2014-03-09  from 2:00 jumps to -> 3:00
