@@ -813,7 +813,7 @@ public class TimestampUtils {
             if (tz == null) {
                 tz = defaultTz;
             }
-            millis -= tz.getOffset(millis);
+            millis -= tz.getOffset(millis - tz.getRawOffset());
         }
 
         Timestamp ts = new Timestamp(millis);
