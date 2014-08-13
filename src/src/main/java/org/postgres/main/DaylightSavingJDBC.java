@@ -102,6 +102,7 @@ public class DaylightSavingJDBC {
 
         System.out.println("DB type: " + testDB + " ConnectionPool:" + connectionPoolProvider);
         System.out.println(System.getProperty("java.version") + " " + System.getProperty("java.vm.name"));
+        System.out.println(System.getProperty("os.name") + " (Version " + System.getProperty("os.version") + ") " + System.getProperty("os.arch"));
 
         String driverClass;
         String url;
